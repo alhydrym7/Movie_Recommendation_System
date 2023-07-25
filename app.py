@@ -5,7 +5,6 @@ import pandas as pd
 import pickle
 import requests
 
-# تحميل الصورة
 image2 = Image.open(r"C:\Users\asus\Downloads\logo.ico")
 st.sidebar.image(image2)
 
@@ -82,13 +81,13 @@ if page == "عن طريق المعلومات":
     film_or_series = st.text_input("هل تبحث عن فلم أم مسلسل (S أو M):").upper()
     num = st.text_input("ادخل عدد التوصيات التي تريدها:")
 
-    # عند الضغط على الزر، نقوم بتنفيذ البحث وعرض النتائج في جدول
+   
     if st.button("البحث"):
-        # التحقق من وجود قيمة غير فارغة قبل تحويلها إلى عدد صحيح
+    
         if num:
             num = int(num)
         else:
-            num = 5  # قيمة افتراضية في حالة عدم توفر قيمة من المستخدم
+            num = 5  
 
         quality_value = 1 if quality == "HD" else 0
         film_or_series = "movie" if film_or_series == "F" else "series"
@@ -101,7 +100,7 @@ if page == "عن طريق المعلومات":
         filtered_data = filtered_data[["type", "genre", "name", "number_of_watches"]]
         st.dataframe(filtered_data.head(num))
 
-# إضافة أنماط CSS لتحقيق توجيه الصفحة من اليمين إلى اليسار
+
 st.markdown(
     """
     <style>
