@@ -13,15 +13,15 @@ import nltk
 nltk.download('stopwords')
 
 # Load the CountVectorizer model
-cv_transforms = pickle.load(open(r'C:\Users\asus\Desktop\Artificial intelligence\Third Year\Summer\EVC\Dataanlysez\cv-transforms.pkl', 'rb'))
+cv_transforms = pickle.load(open('cv-transforms.pkl', 'rb'))
 
 # Load the Multinomial Naive Bayes model
-nb_classifier = pickle.load(open(r'C:\Users\asus\Desktop\Artificial intelligence\Third Year\Summer\EVC\Dataanlysez\movie-genre-mnb-model.pkl', 'rb'))
+nb_classifier = pickle.load(open('movie-genre-mnb-model.pkl', 'rb'))
 
 # Load the Random Forest model
-rf_classifier = pickle.load(open(r'C:\Users\asus\Desktop\Artificial intelligence\Third Year\Summer\EVC\Dataanlysez\movie-genre-rfc-model.pkl', 'rb'))
+rf_classifier = pickle.load(open(r'movie-genre-rfc-model.pkl', 'rb'))
 
-data = pd.read_csv(r"C:\Users\asus\Downloads\movie_recommender_system-main\movie_recommender_system-main\dataset.csv")
+data = pd.read_csv(r"dataset.csv")
 unique_titles = data['genre'].drop_duplicates()
 genres_for_maping = []
 
